@@ -1,0 +1,31 @@
+# Unreal Engine (automatically generated)
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+Plugins/*/Binaries/
+Plugins/*/Intermediate/
+*_BuiltData.uasset
+
+# IDE-Files
+.vs/
+.idea/
+.vscode/
+*.VC.db
+*.VC.opendb
+*.opensdf
+*.sdf
+*.suo
+*.xcworkspace
+*.xcodeproj
+*.sln
+
+# Content (to big for GitHub)
+Content/
+
+# This will be TRACKED:
+# Source/       ← my c++ code
+# Config/       ← project settings
+# .uproject     ← project file
+# Plugins/*/Source/ ← my own plugins (if I have any ._.)
