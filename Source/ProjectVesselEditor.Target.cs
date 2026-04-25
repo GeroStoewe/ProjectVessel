@@ -9,7 +9,8 @@ public class ProjectVesselEditorTarget : TargetRules
 	{
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V6;
+        IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_7;
 
-		ExtraModuleNames.AddRange( new string[] { "ProjectVessel" } );
+        ExtraModuleNames.AddRange( new string[] { "ProjectVessel" } );
 	}
 }
