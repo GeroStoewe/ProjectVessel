@@ -149,29 +149,3 @@ AActor* APVPlayerCharacter::GetVitalCompassActor() const
 {
 	return VitalCompassComponent ? VitalCompassComponent->GetChildActor() : nullptr;
 }
-
-void APVPlayerCharacter::DebugDamageOneLife()
-{
-	UAbilitySystemComponent* ASC = GetAbilitySystemComponent();
-	if (!ASC)
-	{
-		return;
-	}
-
-	const float CurrentHealth = ASC->GetNumericAttribute(UAS_Character::GetHealthAttribute());
-	ASC->SetNumericAttributeBase(UAS_Character::GetHealthAttribute(), FMath::Max(0.f, CurrentHealth - 1.f));
-}
-
-void APVPlayerCharacter::DebugHealOneLife()
-{
-	UAbilitySystemComponent* ASC = GetAbilitySystemComponent();
-	if (!ASC)
-	{
-		return;
-	}
-
-	const float CurrentHealth = ASC->GetNumericAttribute(UAS_Character::GetHealthAttribute());
-	const float MaxHealth = ASC->GetNumericAttribute(UAS_Character::GetMaxHealthAttribute());
-
-	ASC->SetNumericAttributeBase(UAS_Character::GetHealthAttribute(), FMath::Min(MaxHealth, CurrentHealth + 1.f));
-}

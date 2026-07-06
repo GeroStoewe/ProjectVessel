@@ -50,10 +50,4 @@ private:
 	void RefreshVitalDisplay() const;
 	void TryInitialVitalDisplay();
 	void OnHealthChanged(const FOnAttributeChangeData& Data);
-
-	UFUNCTION(BlueprintCallable, Category = "Debug")
-	void DebugDamageOneLife();
-
-	UFUNCTION(BlueprintCallable, Category = "Debug")
-	void DebugHealOneLife();
 };
