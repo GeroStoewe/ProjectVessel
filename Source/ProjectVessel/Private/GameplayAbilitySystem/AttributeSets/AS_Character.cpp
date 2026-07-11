@@ -1,4 +1,5 @@
 #include "GameplayAbilitySystem/AttributeSets/AS_Character.h"
+#include "GameplayEffectExtension.h"
 #include "Net/UnrealNetwork.h"
 
 
@@ -23,5 +24,15 @@ void UAS_Character::PreAttributeChange(const FGameplayAttribute& Attribute, floa
     if (Attribute == GetHealthAttribute())
     {
         NewValue = FMath::Clamp(NewValue, 0.f, GetMaxHealth());
+    }
+}
+
+void UAS_Character::PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data)
+{
+    Super::PostGameplayEffectExecute(Data);
+
+    if (Data.EvaluatedData.Attribute == GetHealthAttribute())
+    {
+        SetHealth(FMath::Clamp(GetHealth(), 0.f, GetMaxHealth()));
     }
 }
