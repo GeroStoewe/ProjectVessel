@@ -140,6 +140,11 @@ void APVPlayerCharacter::TryInitialVitalDisplay()
 	RefreshVitalDisplay();
 }
 
+void APVPlayerCharacter::Server_SendGameplayEventToSelf_Implementation(FGameplayEventData EventData)
+{
+	UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(this, EventData.EventTag, EventData);
+}
+
 APVPlayerState* APVPlayerCharacter::GetPVPlayerState() const
 {
 	return GetPlayerState<APVPlayerState>();

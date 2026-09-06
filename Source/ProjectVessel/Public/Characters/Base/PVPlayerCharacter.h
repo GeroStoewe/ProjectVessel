@@ -50,4 +50,6 @@ private:
 	void RefreshVitalDisplay() const;
 	void TryInitialVitalDisplay();
 	void OnHealthChanged(const FOnAttributeChangeData& Data);
+	UFUNCTION(Server, Reliable, BlueprintCallable, Category = "AbilitySystem")
+	void Server_SendGameplayEventToSelf(FGameplayEventData EventData);
 };
